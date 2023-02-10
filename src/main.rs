@@ -1,9 +1,15 @@
+mod components;
+
 use yew::prelude::*;
+use components::test_component::TestComponent;
 
 #[function_component(App)]
 fn app() -> Html {
     html! {
-        <h1>{ "Hello World" }</h1>
+        <>
+            <h1>{ "Hello World" }</h1>
+            <TestComponent />
+        </>
     }
 }
 
