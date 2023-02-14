@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="en"><head>
+        <meta charset="utf-8">
+        <title>Codeur Facile</title>
+        <style>
+            html{
+                background-color: black;
+                color: #eeeeee;
+                font-family: Roboto;
+                text-justify: auto;
+            }
+            .first_text{
+                position: relative;
+                animation: first_text_anim 3s 1;
+                letter-spacing: 8px;
+            }
+            /* The second text should be displayed at the end of the first animation */
+            .second_text{
+                animation:second_text_anim 5s 1;
+                letter-spacing: normal;
+            }
+            /**
+                ANIMATIONS
+            */
+            @keyframes first_text_anim {
+                0%{
+                    margin-bottom: -40px;
+                }
+                30%{
+                    letter-spacing: 25px;
+                    margin-bottom: -40px;
+                }
+                85%{
+                    letter-spacing: 8px;
+                    margin-bottom: -40px;
+                }
+            }
+            @keyframes second_text_anim {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 100;
+                }
+            }
+        </style>
+    
+<link rel="preload" href="/my-website-180c2c91c6b2e142_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/my-website-180c2c91c6b2e142.js"></head>
+    <body>
+
+<script type="module">import init from '/my-website-180c2c91c6b2e142.js';init('/my-website-180c2c91c6b2e142_bg.wasm');</script></body></html>
