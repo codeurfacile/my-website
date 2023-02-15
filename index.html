@@ -2,11 +2,18 @@
         <meta charset="utf-8">
         <title>Codeur Facile</title>
         <style>
+            @font-face {
+                font-family: "nexa_lightregular";
+                src: url("./fonts/nexa_light-webfont.woff") format("woff"), url("./fonts/nexa_light-webfont.woff2") format("woff2");
+                font-weight: normal;
+                font-style: normal;
+            }
             html{
                 background-color: black;
                 color: #eeeeee;
-                font-family: Roboto;
+                font-family: nexa_lightregular, Roboto;
                 text-justify: auto;
+                letter-spacing: 2px;
             }
             .first_text{
                 position: relative;
@@ -16,7 +23,7 @@
             /* The second text should be displayed at the end of the first animation */
             .second_text{
                 animation:second_text_anim 5s 1;
-                letter-spacing: normal;
+                letter-spacing: 2px;
             }
             /**
                 ANIMATIONS
@@ -44,8 +51,8 @@
             }
         </style>
     
-<link rel="preload" href="/my-website/my-website-d9a72bbdfdd5f9cc_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
-<link rel="modulepreload" href="/my-website/my-website-d9a72bbdfdd5f9cc.js"></head>
+<link rel="preload" href="/my-website/my-website-119094279aaf849c_bg.wasm" as="fetch" type="application/wasm" crossorigin="">
+<link rel="modulepreload" href="/my-website/my-website-119094279aaf849c.js"></head>
     <body>
 
-<script type="module">import init from '/my-website/my-website-d9a72bbdfdd5f9cc.js';init('/my-website/my-website-d9a72bbdfdd5f9cc_bg.wasm');</script></body></html>
+<script type="module">import init from '/my-website/my-website-119094279aaf849c.js';init('/my-website/my-website-119094279aaf849c_bg.wasm');</script></body></html>
