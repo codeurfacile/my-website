@@ -32,7 +32,7 @@ pub fn breaking_block_component(breaking_block_element: &BreakingBlockElement) -
     html! {
         <>
             <div>
-                <div style="display: flex; justify-content: center"><img src={block_image} onmouseover={handle_over} style="width: 400px"/></div>
+                <div style="display: flex; justify-content: center"><img src={block_image} onmouseover={handle_over} style="width: 400px; display: inline-block"/></div>
                 <div style="text-align: center" class={block_class.to_string()}>{ block_text }</div>
             </div>
         </>
