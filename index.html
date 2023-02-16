@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf-8"/>
         <title>Codeur Facile</title>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
         <script src="https://kit.fontawesome.com/f05c8837f2.js" crossorigin="anonymous"></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3827329166076060" crossorigin="anonymous"></script>
         <style id="globalStyle">
@@ -74,10 +77,19 @@
         </style>
         <style id="articlesStyle">
             #blog{
-                margin-top: 100px;            
+                margin-top: 100px;
+            }
+            #globalArticleTitle{
+                text-align: center;
             }
             #blogArticles{
+                margin-top: 30px;
                 margin-left: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            #blogArticles a{
+                margin: auto;
             }
             .articleTitle{
                 display: inline-block;

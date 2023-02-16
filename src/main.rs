@@ -38,7 +38,7 @@ fn home() -> Html {
                 <BreakingBlockComponent breaking_block = { codeur_facile_description_block() } />
             </div>
             <div id="blog">
-                <h1>{"Articles du blog: "}</h1>
+                <h1 id="globalArticleTitle">{"Articles du blog: "}</h1>
                 <div id="blogArticles">
                     { list_articles() }
                 </div>
