@@ -9,7 +9,7 @@ use components::article_component::ArticleComponent;
 use components::breaking_block_component::BreakingBlockComponent;
 use components::helpers::codeur_facile_description_block;
 use components::helpers::{
-    facebook_link, github_link, home_link, introduction_rust_article, twitter_link, youtube_link,
+    facebook_link, github_link, introduction_rust_article, twitter_link, youtube_link,
 };
 use components::social_media_block_component::SocialMediaBlockComponent;
 
@@ -41,10 +41,26 @@ fn home() -> Html {
     }
 }
 
+fn render_home_link() -> Html {
+    html! {
+        <>
+            <div class="socialMediaBlockWrapper">
+                <div class="socialMediaBlock" style="width: 50px">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="fa fa-home"></span>
+                </div>
+            </div>
+        </>
+    }
+}
+
 fn footer() -> Html {
     html! {
         <footer><div>
-            <SocialMediaBlockComponent social_media_block = { home_link() } />
+            <a href={Route::Home.to_path()}>{ render_home_link() }</a>
             <SocialMediaBlockComponent social_media_block = { youtube_link() } />
             <SocialMediaBlockComponent social_media_block = { github_link() } />
             <SocialMediaBlockComponent social_media_block = { twitter_link() } />
@@ -88,9 +104,9 @@ fn switch(routes: Route) -> Html {
 fn app() -> Html {
     html! {
         <>
-            <BrowserRouter>
+            <HashRouter>
                 <Switch<Route> render={switch} />
-            </BrowserRouter>
+            </HashRouter>
             {footer()}
         </>
     }

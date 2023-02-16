@@ -61,13 +61,6 @@ pub fn introduction_rust_article(expanded: bool) -> ArticleBlock {
     }
 }
 
-pub fn home_link() -> SocialMediaBlock {
-    SocialMediaBlock {
-        social_media_class: SocialMediaEnum::Home,
-        social_media_url: "/".to_string(),
-    }
-}
-
 pub fn youtube_link() -> SocialMediaBlock {
     SocialMediaBlock {
         social_media_class: SocialMediaEnum::Youtube,
