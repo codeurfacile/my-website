@@ -6,45 +6,15 @@
         <script src="https://kit.fontawesome.com/f05c8837f2.js" crossorigin="anonymous"></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3827329166076060" crossorigin="anonymous"></script>
         <style id="globalStyle">
-            @font-face {
-                font-family: "nexa_lightregular";
-                src: url("./fonts/nexa_light-webfont.woff") format("woff"), url("./fonts/nexa_light-webfont.woff2") format("woff2");
-                font-weight: normal;
-                font-style: normal;
-            }
-            html{
-                background-color: black;
-                color: #eeeeee;
-                font-family: nexa_lightregular, Roboto;
-                text-justify: auto;
-                letter-spacing: 2px;
-            }
-        </style>
-        <style id="breakingBlockStyle">
-            .first_text{
-                position: relative;
-                animation: first_text_anim 3s 1;
-                letter-spacing: 8px;
-            }
-            /* The second text should be displayed at the end of the first animation */
-            .second_text{
-                animation:second_text_anim 5s 1;
-                letter-spacing: 2px;
-            }
-            /**
-                ANIMATIONS
-            */
             @keyframes first_text_anim {
                 0%{
-                    margin-bottom: -40px;
+                    
                 }
                 30%{
                     letter-spacing: 25px;
-                    margin-bottom: -40px;
                 }
                 85%{
                     letter-spacing: 8px;
-                    margin-bottom: -40px;
                 }
             }
             @keyframes second_text_anim {
@@ -55,12 +25,91 @@
                     opacity: 100;
                 }
             }
+            @font-face {
+                font-family: "nexa_lightregular";
+                src: url("./fonts/nexa_light-webfont.woff") format("woff"), url("./fonts/nexa_light-webfont.woff2") format("woff2");
+                font-weight: normal;
+                font-style: normal;
+            }
+            html{
+                background-color: black;
+                color: #d1d1d1;
+                font-family: nexa_lightregular, Roboto;
+                font-size: 20px;
+                text-justify: auto;
+                letter-spacing: 2px;
+                margin: 40px;
+            }
+            img:hover{
+                cursor: pointer;
+            }
+            h1{
+                color: #ff5100;
+                font-size: 32px;
+                margin-top: 30px;
+            }
+            h2{
+                font-size: 26px;
+            }
+            a{
+                color: #0e76a8;
+            }
+            li{
+                margin-bottom: 5px;
+            }
+        </style>
+        <style id="articlesStyle">
+            #blog{
+                margin-top: 100px;            
+            }
+            #blogArticles{
+                margin-left: 20px;
+            }
+            .articleTitle{
+                display: inline-block;
+                padding-bottom: 10px;
+                border-bottom: solid 1px #939393;
+                color: #f99567;
+            }
+            .articleDate{
+                font-size: 16px;
+                color: #a3a3a3;
+                margin-bottom: 10px;
+            }
+            .articleText, .articleTextAnim{
+                color: #d1d1d1;
+            }
+            .articleText:hover{
+                cursor: pointer;
+            }
+            .articleTextAnim{
+                animation:second_text_anim 1s 1;
+            }
+            .articleWrapper{
+                margin-bottom: 50px;
+            }
+        </style>
+        <style id="breakingBlockStyle">
+            #breakingBlock img{
+                height: 200px;
+                width: 100px;
+            }
+            .first_text{
+                position: relative;
+                animation: first_text_anim 3s 1;
+                letter-spacing: 8px;
+            }
+            /* The second text should be displayed at the end of the first animation */
+            .second_text{
+                animation:second_text_anim 5s 1;
+                letter-spacing: 2px;
+            }
         </style>
         <style id="footerStyle">
             footer{
                 position: fixed;
-                bottom: 20px;
-                width: 100%;
+                top: 50px;
+                right: 40px;
             }
             footer div{
                 display: flex;
@@ -121,19 +170,19 @@
                 box-shadow: -1px 1px 1px rgba(0, 0, 0, .5);
             }
             .socialMediaBlock:hover span:nth-child(5) {
-                transform: translate(40px, -40px);
+                transform: translate(20px, -20px);
                 opacity: 1;
             }
             .socialMediaBlock:hover span:nth-child(4) {
-                transform: translate(30px, -30px);
+                transform: translate(15px, -15px);
                 opacity: .8;
             }
             .socialMediaBlock:hover span:nth-child(3) {
-                transform: translate(20px, -20px);
+                transform: translate(10px, -10px);
                 opacity: .6;
             }
             .socialMediaBlock:hover span:nth-child(2) {
-                transform: translate(10px, -10px);
+                transform: translate(5px, -5px);
                 opacity: .4;
             }
             .socialMediaBlock:hover span:nth-child(1) {
