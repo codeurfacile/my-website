@@ -1,16 +1,13 @@
 mod components;
 
-use components::article_component::ArticleBlock;
 use yew::functional::*;
 use yew::prelude::*;
 use yew_router::prelude::*;
 
-use components::article_component::ArticleComponent;
+use components::article_component::{ArticleComponent, ArticleComponentDetails};
 use components::breaking_block_component::BreakingBlockComponent;
 use components::helpers::codeur_facile_description_block;
-use components::helpers::{
-    facebook_link, github_link, introduction_rust_article, twitter_link, youtube_link,
-};
+use components::helpers::{facebook_link, fill_articles, github_link, twitter_link, youtube_link};
 use components::social_media_block_component::SocialMediaBlockComponent;
 
 #[derive(Clone, Routable, PartialEq)]
@@ -24,6 +21,15 @@ enum Route {
     NotFound,
 }
 
+fn list_articles() -> Html {
+    fill_articles().iter()
+        .map(|(id, article)| {
+            let id = *id;
+            let path = "#".to_string() + &Route::Article{id}.to_path();
+            html! { <a href={path} class="notUnderlinedLink"><ArticleComponent article_block = { article.clone() } /></a> }
+        } ).collect()
+}
+
 fn home() -> Html {
     html! {
         <>
@@ -34,7 +40,7 @@ fn home() -> Html {
             <div id="blog">
                 <h1>{"Articles du blog: "}</h1>
                 <div id="blogArticles">
-                    <ArticleComponent article_block = { introduction_rust_article(false) } />
+                    { list_articles() }
                 </div>
             </div>
         </>
@@ -69,27 +75,14 @@ fn footer() -> Html {
     }
 }
 
-fn no_article() -> Html {
-    html! {
-        <>
-            <div>{"No article found for the given URL"}</div>
-        </>
-    }
-}
-
-fn render_article(article: ArticleBlock) -> Html {
-    html! {
-        <>
-            <ArticleComponent article_block = { article } />
-        </>
-    }
-}
-
-fn article(id: usize) -> Html {
-    match id {
-        1 => render_article(introduction_rust_article(true)),
-        _ => no_article(),
-    }
+fn article(id_input: usize) -> Html {
+    fill_articles()
+        .iter()
+        .filter(|(id_article, _)| id_input == **id_article)
+        .map(|(_, article)| {
+            html! {<ArticleComponentDetails article_block = { article.clone() } />}
+        })
+        .collect()
 }
 
 fn switch(routes: Route) -> Html {

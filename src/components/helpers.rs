@@ -1,3 +1,5 @@
+use std::collections::HashMap;
+
 use chrono::NaiveDate;
 use yew::html;
 
@@ -18,7 +20,7 @@ pub fn codeur_facile_description_block() -> BreakingBlock {
     }
 }
 
-pub fn introduction_rust_article(expanded: bool) -> ArticleBlock {
+pub fn introduction_rust_article() -> ArticleBlock {
     ArticleBlock {
         title: "Introduction à Rust".to_string(),
         text: html! {
@@ -57,7 +59,6 @@ pub fn introduction_rust_article(expanded: bool) -> ArticleBlock {
             </>
         },
         date: NaiveDate::from_ymd_opt(2023, 2, 16).unwrap(),
-        expanded_default: expanded,
     }
 }
 
@@ -87,4 +88,10 @@ pub fn facebook_link() -> SocialMediaBlock {
         social_media_class: SocialMediaEnum::Facebook,
         social_media_url: "https://www.facebook.com/profile.php?id=100089960516590".to_string(),
     }
+}
+
+pub fn fill_articles() -> HashMap<usize, ArticleBlock> {
+    let mut map = HashMap::new();
+    map.insert(1, introduction_rust_article());
+    map
 }

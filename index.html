@@ -25,6 +25,14 @@
                     opacity: 100;
                 }
             }
+            @keyframes link_opacity {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0.6;
+                }
+            }
             @font-face {
                 font-family: "nexa_lightregular";
                 src: url("./fonts/nexa_light-webfont.woff") format("woff"), url("./fonts/nexa_light-webfont.woff2") format("woff2");
@@ -56,6 +64,12 @@
             }
             li{
                 margin-bottom: 5px;
+            }
+            .notUnderlinedLink{
+                text-decoration: none;
+            }
+            .notUnderlinedLink:hover{
+                animation: link_opacity 1s forwards;
             }
         </style>
         <style id="articlesStyle">
@@ -99,7 +113,6 @@
                 animation: first_text_anim 3s 1;
                 letter-spacing: 8px;
             }
-            /* The second text should be displayed at the end of the first animation */
             .second_text{
                 animation:second_text_anim 5s 1;
                 letter-spacing: 2px;
