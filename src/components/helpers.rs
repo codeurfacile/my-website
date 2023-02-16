@@ -20,7 +20,7 @@ pub fn codeur_facile_description_block() -> BreakingBlock {
     }
 }
 
-pub fn introduction_rust_article() -> ArticleBlock {
+fn introduction_rust_article() -> ArticleBlock {
     ArticleBlock {
         title: "Introduction à Rust".to_string(),
         text: html! {
@@ -62,6 +62,24 @@ pub fn introduction_rust_article() -> ArticleBlock {
     }
 }
 
+fn types_donnees_rust_article() -> ArticleBlock {
+    ArticleBlock { 
+        title: "Types de données de Rust".to_string(),
+        text: html! {
+            <>
+                <pre>
+                    <code class="language-rust hljs">
+                    {"fn main() {\n"}
+                    {"  let entier: usize = 2;\n"}
+                    {"}"}
+                    </code>
+                </pre>
+            </>
+        },
+        date: NaiveDate::from_ymd_opt(2023, 2, 16).unwrap(),
+    }
+}
+
 pub fn youtube_link() -> SocialMediaBlock {
     SocialMediaBlock {
         social_media_class: SocialMediaEnum::Youtube,
@@ -92,6 +110,7 @@ pub fn facebook_link() -> SocialMediaBlock {
 
 pub fn fill_articles() -> HashMap<usize, ArticleBlock> {
     let mut map = HashMap::new();
+    map.insert(2, types_donnees_rust_article());
     map.insert(1, introduction_rust_article());
     map
 }

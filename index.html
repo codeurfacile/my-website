@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8"/>
         <title>Codeur Facile</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js"></script>
+        <script>hljs.highlightAll()</script>
         <script src="https://kit.fontawesome.com/f05c8837f2.js" crossorigin="anonymous"></script>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3827329166076060" crossorigin="anonymous"></script>
         <style id="globalStyle">
@@ -71,13 +73,34 @@
             .notUnderlinedLink:hover{
                 animation: link_opacity 1s forwards;
             }
+            code{
+                display: inline-block;
+                white-space: pre-wrap;
+                color: black;
+                background-color: #c4c4c4;
+                border-radius: 3px;
+                border-color: #e7e7e7;
+                padding: 20px;
+                margin-top: 15px;
+                margin-bottom: 25px;
+                word-wrap: normal;
+            }
         </style>
         <style id="articlesStyle">
             #blog{
-                margin-top: 100px;            
+                margin-top: 100px;
+            }
+            #globalArticleTitle{
+                text-align: center;
             }
             #blogArticles{
+                margin-top: 30px;
                 margin-left: 20px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            #blogArticles a{
+                margin: auto;
             }
             .articleTitle{
                 display: inline-block;
