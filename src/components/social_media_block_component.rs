@@ -4,6 +4,7 @@ use yew::{function_component, html, Html, Properties};
 #[derive(PartialEq, Clone, Display)]
 #[strum(serialize_all = "snake_case")]
 pub enum SocialMediaEnum {
+    Home,
     Twitter,
     Facebook,
     Github,

@@ -10,3 +10,4 @@ chrono = "0.4.23"
 strum = { version = "0.24.1", features = ["derive"] }
 strum_macros = "0.24"
 yew = { version = "0.20", features = ["csr"] }
+yew-router = "0.17.0"

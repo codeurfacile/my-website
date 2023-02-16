@@ -6,6 +6,7 @@ pub struct ArticleBlock {
     pub title: String,
     pub text: Html,
     pub date: NaiveDate,
+    pub expanded_default: bool,
 }
 
 #[derive(Properties, PartialEq, Clone)]
@@ -25,7 +26,7 @@ pub fn breaking_block_component(article_element: &ArticleElement) -> Html {
                 <article>
                     <h2 class="articleTitle">{ component.article_block.title }</h2>
                     <p class="articleDate"><i>{"Écrit le "}{component.article_block.date.format("%d/%m/%Y")}</i></p>
-                    if article_show {
+                    if article_show || component.article_block.expanded_default {
                         <p class="articleTextAnim">
                             { component.article_block.text }
                         </p>
