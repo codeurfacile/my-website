@@ -1,12 +1,11 @@
 use chrono::NaiveDate;
-use yew::{function_component, html, use_state, Callback, Html, Properties};
+use yew::{function_component, html, Html, Properties};
 
 #[derive(Properties, PartialEq, Clone)]
 pub struct ArticleBlock {
     pub title: String,
     pub text: Html,
     pub date: NaiveDate,
-    pub expanded_default: bool,
 }
 
 #[derive(Properties, PartialEq, Clone)]
@@ -15,24 +14,33 @@ pub struct ArticleElement {
 }
 
 #[function_component(ArticleComponent)]
-pub fn breaking_block_component(article_element: &ArticleElement) -> Html {
+pub fn article_component(article_element: &ArticleElement) -> Html {
     let component = article_element.clone();
-    let article_show_handle = use_state(|| false);
-    let article_show = *article_show_handle;
-    let handle_click = Callback::from(move |_| article_show_handle.set(true));
     html! {
         <>
             <div class="articleWrapper">
                 <article>
                     <h2 class="articleTitle">{ component.article_block.title }</h2>
                     <p class="articleDate"><i>{"Écrit le "}{component.article_block.date.format("%d/%m/%Y")}</i></p>
-                    if article_show || component.article_block.expanded_default {
-                        <p class="articleTextAnim">
-                            { component.article_block.text }
-                        </p>
-                    } else {
-                        <p onclick={handle_click} class="articleText"><i>{"Click to expand..."}</i></p>
-                    }
+                    <p class="articleText"><i>{"Click to visualize..."}</i></p>
+                </article>
+            </div>
+        </>
+    }
+}
+
+#[function_component(ArticleComponentDetails)]
+pub fn article_component_details(article_element: &ArticleElement) -> Html {
+    let component = article_element.clone();
+    html! {
+        <>
+            <div class="articleWrapper">
+                <article>
+                    <h2 class="articleTitle">{ component.article_block.title }</h2>
+                    <p class="articleDate"><i>{"Écrit le "}{component.article_block.date.format("%d/%m/%Y")}</i></p>
+                    <p class="articleTextAnim">
+                        { component.article_block.text }
+                    </p>
                 </article>
             </div>
         </>
