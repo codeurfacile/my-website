@@ -18,7 +18,7 @@ pub fn codeur_facile_description_block() -> BreakingBlock {
     }
 }
 
-pub fn introduction_rust_article() -> ArticleBlock {
+pub fn introduction_rust_article(expanded: bool) -> ArticleBlock {
     ArticleBlock {
         title: "Introduction à Rust".to_string(),
         text: html! {
@@ -57,6 +57,14 @@ pub fn introduction_rust_article() -> ArticleBlock {
             </>
         },
         date: NaiveDate::from_ymd_opt(2023, 2, 16).unwrap(),
+        expanded_default: expanded,
+    }
+}
+
+pub fn home_link() -> SocialMediaBlock {
+    SocialMediaBlock {
+        social_media_class: SocialMediaEnum::Home,
+        social_media_url: "/".to_string(),
     }
 }
 
